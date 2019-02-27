@@ -1,0 +1,37 @@
+---
+title: "My Presentation with Plotly"
+author: "Yu Mo"
+date: "February 27, 2019"
+output: 
+  ioslides_presentation
+---
+
+<style type="text/css">
+body, code.r{
+  font-size: 14px;
+}
+pre {
+  font-size: 14px
+}
+</style>
+
+## IRIS (scatter plot)
+#### Data description
+<font size="3">The measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</font>
+```{r message=FALSE,echo=FALSE,fig.height=4, fig.width=7}
+library(datasets)
+data(iris)
+library(plotly)
+plot_ly(iris,type="scatter", x= ~Sepal.Length, y= ~Sepal.Width, mode="markers",color=~Species, symbol = ~Species)
+```
+
+## Flow of the River Nile (time series plot)
+#### Data description
+<font size="3">Measurements of the annual flow of the river Nile at Aswan (formerly Assuan), 1871-1970, in 10^8 m^3.</font>
+```{r message=FALSE,echo=FALSE,fig.height=4, fig.width=6}
+data(Nile)
+plot_ly(x=time(Nile), y= Nile, mode = 'lines')
+```
+
+
+
